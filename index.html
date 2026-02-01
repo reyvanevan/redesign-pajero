@@ -400,6 +400,38 @@
                     }
                 }
             });
+            // Product Detail Carousel Logic
+            let currentDetailIndex = 0;
+            const detailSlides = document.querySelectorAll('.detail-slide');
+            const detailTextSlides = document.querySelectorAll('.detail-text-slide');
+            const currentDetailSpan = document.getElementById('currentDetail');
+
+            function updateDetailSlide(index) {
+                // Bounds check
+                if (index < 0) index = detailSlides.length - 1;
+                if (index >= detailSlides.length) index = 0;
+
+                currentDetailIndex = index;
+
+                // Update Images
+                detailSlides.forEach(slide => slide.classList.remove('active'));
+                if (detailSlides[index]) detailSlides[index].classList.add('active');
+
+                // Update Text
+                detailTextSlides.forEach(slide => slide.classList.remove('active'));
+                if (detailTextSlides[index]) detailTextSlides[index].classList.add('active');
+
+                // Update Indicator
+                if (currentDetailSpan) currentDetailSpan.textContent = '0' + (index + 1);
+            }
+
+            function nextDetail() {
+                updateDetailSlide(currentDetailIndex + 1);
+            }
+
+            function prevDetail() {
+                updateDetailSlide(currentDetailIndex - 1);
+            }
         </script>
 </body>
 
