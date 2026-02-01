@@ -364,6 +364,8 @@
             </div>
         </footer>
 
+        <button id="backToTop" class="back-to-top" title="Go to top">↑</button>
+
         <!-- Script for Color Switching -->
         <script>
             const carImages = {
@@ -484,6 +486,41 @@
                 updateDetailSlide(currentDetailIndex - 1);
             }
 
+            // Phase 6: Sticky Nav Active State on Scroll
+            const navLinks = document.querySelectorAll('.sticky-link');
+            const sections = {
+                'CarHeroSection': navLinks[0], // Varian (closest to top)
+                'HighlightSection': navLinks[1],
+                'ProductDetailSection': navLinks[2],
+                'site-footer': navLinks[3] // Galeri/Footer placeholder
+            };
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '-20% 0px -70% 0px',
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        const link = sections[id];
+
+                        if (link) {
+                            navLinks.forEach(l => l.classList.remove('active'));
+                            link.classList.add('active');
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('section, footer').forEach(section => {
+                if (sections[section.getAttribute('id')]) {
+                    observer.observe(section);
+                }
+            });
+
             // Phase 6: Mobile Menu Toggle
             const menuToggle = document.querySelector('.menu-toggle');
             const mobileNav = document.querySelector('.mobile-nav-panel');
@@ -494,6 +531,25 @@
                     mobileNav.classList.toggle('active');
                     // Prevent scroll when menu is open
                     document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+                });
+            }
+            // Phase 6: Back to Top Button Logic
+            const backToTopBtn = document.getElementById('backToTop');
+
+            if (backToTopBtn) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 300) {
+                        backToTopBtn.classList.add('show');
+                    } else {
+                        backToTopBtn.classList.remove('show');
+                    }
+                });
+
+                backToTopBtn.addEventListener('click', () => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
                 });
             }
         </script>
