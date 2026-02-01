@@ -278,6 +278,63 @@
                 document.querySelectorAll('.color-btn').forEach(btn => btn.classList.remove('active'));
                 event.currentTarget.classList.add('active');
             }
+
+            // Highlight Section Carousel Logic
+            const highlightSection = document.getElementById('HighlightSection');
+            const slides = document.querySelectorAll('.highlight-slide');
+            const indicators = document.querySelectorAll('.indicator');
+            let currentSlide = 0;
+
+            function goToSlide(index) {
+                if (!slides.length) return;
+
+                // Update slides
+                slides.forEach(slide => slide.classList.remove('active'));
+                if (slides[index - 1]) slides[index - 1].classList.add('active');
+
+                // Update indicators
+                indicators.forEach(ind => ind.classList.remove('active'));
+                if (indicators[index - 1]) indicators[index - 1].classList.add('active');
+
+                currentSlide = index - 1;
+            }
+
+            // Scroll Logic for Highlight Section
+            window.addEventListener('scroll', () => {
+                if (!highlightSection) return;
+
+                const sectionRect = highlightSection.getBoundingClientRect();
+                const sectionTop = sectionRect.top;
+                const sectionHeight = sectionRect.height;
+                const windowHeight = window.innerHeight;
+
+                // Check if section is primarily in view or we are scrolling through it
+                // We want to trigger when the sticky element is locked.
+                // The sticky locks when top <= 60 (nav height).
+                // It stays locked until bottom reaches bottom of parent.
+
+                if (sectionTop <= 100 && sectionTop > -sectionHeight + windowHeight) {
+                    // Calculate progress
+                    // We want 0 to 1 progress as we scroll through the 300vh height
+                    const scrollDistance = 100 - sectionTop; // Offset by nav height approximation
+                    const maxScroll = sectionHeight - windowHeight;
+                    let progress = scrollDistance / maxScroll;
+
+                    // Clamp progress
+                    if (progress < 0) progress = 0;
+                    if (progress > 1) progress = 1;
+
+                    // Map progress to slide index (0 to 3)
+                    let slideIndex = Math.floor(progress * slides.length);
+
+                    // Edge case: if progress is 1, index might be length (out of bounds)
+                    if (slideIndex >= slides.length) slideIndex = slides.length - 1;
+
+                    if (slideIndex !== currentSlide) {
+                        goToSlide(slideIndex + 1);
+                    }
+                }
+            });
         </script>
 </body>
 
