@@ -4,132 +4,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mitsubishi Pajero Sport - Live the Adventure</title>
+    <title>New Pajero Sport - Mitsubishi Motors Indonesia</title>
     <link rel="stylesheet" href="style.css">
-    <meta name="description"
-        content="Jelajahi keunggulan Mitsubishi Pajero Sport. SUV tangguh dengan desain mewah dan performa tinggi.">
 </head>
 
 <body>
 
-    <!-- Navigation -->
-    <header class="navbar">
-        <div class="container">
-            <a href="#" class="footer-logo">MITSUBISHI MOTORS</a>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#home" class="nav-link">Home</a></li>
-                    <li><a href="#features" class="nav-link">Fitur</a></li>
-                    <li><a href="#interior" class="nav-link">Interior</a></li>
-                    <li><a href="#specs" class="nav-link">Spesifikasi</a></li>
-                </ul>
-            </nav>
-            <a href="#contact" class="btn btn-primary">Test Drive</a>
+    <!-- Phase 1: Official Header -->
+    <header class="site-header">
+        <div class="brand-section">
+            <a href="#">
+                <!-- Using a highly reliable placeholder for the Logo since local assets are missing -->
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Mitsubishi_logo.svg"
+                    alt="Mitsubishi Motors" class="brand-logo">
+            </a>
+            <div class="separator hidden-mobile"></div>
+            <!-- Anniversary Logo Placeholder -->
+            <!-- <img src="..." class="anniversary-logo hidden-mobile"> -->
         </div>
+
+        <nav class="main-nav hidden-mobile">
+            <div class="nav-item">Model <span>&#8964;</span></div>
+            <div class="nav-item">Purna Jual <span>&#8964;</span></div>
+            <div class="nav-item">Kepemilikan <span>&#8964;</span></div>
+            <div class="nav-item">Promosi <span>&#8964;</span></div>
+            <div class="nav-item">Berita & Aktivitas <span>&#8964;</span></div>
+            <div class="nav-item">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/search--v1.png" alt="Search" class="nav-icon">
+            </div>
+        </nav>
+
+        <!-- Mobile Menu Trigger (Visual Only for now) -->
+        <div class="hidden-desktop" style="color: white; font-size: 24px;">&#9776;</div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content fade-in">
-                <span class="section-subtitle">The New</span>
-                <h1>PAJERO <br><span>SPORT</span></h1>
-                <p>Kombinasi sempurna ketangguhan off-road dan kemewahan urban. Siap menemani setiap petualangan Anda.
-                </p>
-                <div class="hero-actions">
-                    <a href="#contact" class="btn btn-primary">Pesan Sekarang</a>
-                    <a href="#features" class="btn btn-outline" style="margin-left: 15px;">Eksplorasi</a>
+    <main>
+        <!-- Phase 1: Hero Section -->
+        <section id="CarHeroSection" class="hero-section">
+            <video playsinline autoplay loop muted class="hero-video">
+                <!-- Official Video URL -->
+                <source
+                    src="https://storage.googleapis.com/gcmkscsp001/public/products/banner/video/qx-movie-for-web-made-with-clipchamp-resize.mp4?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=bsidevops%40gp-prod-mmksi-web-01.iam.gserviceaccount.com%2F20260201%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260201T102528Z&X-Goog-Expires=604800&X-Goog-SignedHeaders=host&ts=1769941528&X-Goog-Signature=04a0ad1d8cfa10b964d63343619f2a3a284c617be8d240d0a34ecaf7daeec125ba13e0fee679eece3d30f19783297f22d4273235e96d0c2af16cb6be1562fb4ea04cb96f4377dc4653a6a5bb25e8a0a209ef344e41d8287bf38fa97f0eef7e02f5dea0482bb57b0db50349905cb93534f1369a7aa946e5630fc1d457b4c310cefd0e74cf940379b780c326011ec79a70828c4c7ddf47c9da23fd769c8923efe38d4dc94998acf27fc379fc06df59fcdd49add3c7229869f90b129844f7a186ba058a498353fea5d1ae5902f4cdda54929247af82ebc59c02b1112583e42e400624456f2eb323240cb2eebdab4967ee0f4058135adfc15c3e33e73546756cf247"
+                    type="video/mp4">
+            </video>
+
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+                <!-- Sensor Image/Badge -->
+                <img src="https://storage.googleapis.com/gcmkscsp001/public/media-assets/b840e1fd-17c0-4488-90d6-21e8593e656b/conversions/jqfrr7i2mxmkrdrognu59bbjqwummi133orl4xew-optimized.webp?GoogleAccessId=bsidevops%40gp-prod-mmksi-web-01.iam.gserviceaccount.com&Expires=1770546328&Signature=WF4jnhuP%2FGlRBnDpYGOtMnc6Do3FjoMrYhqIOlPrW%2BUIt1LRM%2BNFGXUKi7fM7h9meD9%2BzbjYYsZbf%2BWsPlNlS25NNvV7wsdxKl1pvBcSsa4KTYoylJ6hLF%2FK8axLhFDNXfYHNM3plOzKkJvCF43ZJfX%2FvJRuje9L1ddzR3r%2B%2BNsvDvZx0K6XjZdARLyHtQ8YzIjxJ%2BR94ahgx7aMaAdvlzA8YO3ea%2F6sTlvGN5QbXEKqdBdDEI%2BJACEoIfNwsj8sOsduxGGPvxs7BtOknfK1TvqVUYZv2i1kMHtoMye6%2FnIzxZLPDkL3LMCpoRaORJ1jB%2FcOJ3nXcX%2BVmFm7ez14cQ%3D%3D"
+                    alt="Car Sensor" class="hero-badge-img">
+
+                <h1 class="hero-title">Jelajahi Petualangan<br>Tanpa Batas</h1>
+
+                <div class="hero-features">
+                    <!-- Feature 1 -->
+                    <div class="feature-item">
+                        <img src="https://storage.googleapis.com/gcmkscsp001/public/products/main-features/6DieCYrQaeQCTOfThHC4IRGidNS5Ycc0OT2ByPRh.png?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=bsidevops%40gp-prod-mmksi-web-01.iam.gserviceaccount.com%2F20260201%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260201T102531Z&X-Goog-Expires=604800&X-Goog-SignedHeaders=host&ts=1769941531&X-Goog-Signature=66752c07640337fc1471f3c417fd47d34017414d693a5b883bb289e2c7afe60d0f05d190c6476785dc9ca07d365dfbdd64c172b411f9387f2cee13b94a1c31edb862ec91210ff78de8d4c7e9e76ccfecd2117cd1907b7571465e9eaf78c1f93367d530a9c689e1ecaca1f1047080566811beb54427b84d7c6f0ad864f6e277e1212f34d768da1e048629631b3a788bc48e83e34f36e6e73946c9ebb3b99beba047e7176ef4b793099ee77b170af488c96932e651c3f0c0ea48013f307c6b50edfffdc8e1b2fa365cc5af91ae0bae530e59307cefaeb735a709182d6531295ccb7c77df145624c636b229d24205c7c30f309bcad43774ee4a4221f130a8373f6b"
+                            alt="Security" class="feature-icon">
+                        <p class="feature-text">Teknologi Keamanan Terkini</p>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div class="feature-item">
+                        <img src="https://storage.googleapis.com/gcmkscsp001/public/products/main-features/UGEN9nImxXnrDWQhci39sDUj9Lf9DF3l3jxQeryy.png?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=bsidevops%40gp-prod-mmksi-web-01.iam.gserviceaccount.com%2F20260201%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260201T102531Z&X-Goog-Expires=604800&X-Goog-SignedHeaders=host&ts=1769941531&X-Goog-Signature=166ace986c4ea2da14953c5ca264fa80a7d714d21107c74cdecd07d8f369965badb2123f5f3a1795e9dd7e287826f9bd6262e24cbc24a2c74683a407f01daf26dc84e4cc9f577539fd2d9c284552d6d70b3d912b58e61dd81e3ae3dad226d7e63abf43b5de82a5ae01fc69792e0e56189e753d35880d2e47b17395c54d358815f8831cad580a82e956b435efb148b7c216faf11ab24f9b76803b589d04e1c8111ded6456cc545ea2ed56e03e4fa56b41cf76a4c57673048f97fc8548f114abfdea01dd37a77bd08dde9960632d4826486c35c1a1a19f467173091744db139f9bacecc2fa69999cf755e7339744db01ecba8454dc8f9dc2ca7718a090d4a88ad3"
+                            alt="Engine" class="feature-icon">
+                        <p class="feature-text">Mesin Tangguh & Bertenaga</p>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div class="feature-item">
+                        <img src="https://storage.googleapis.com/gcmkscsp001/public/products/main-features/egEqpu7lh3itpZ4JO19RJ8qPLcjALm50VrxoQ5B5.png?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=bsidevops%40gp-prod-mmksi-web-01.iam.gserviceaccount.com%2F20260201%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260201T102531Z&X-Goog-Expires=604800&X-Goog-SignedHeaders=host&ts=1769941531&X-Goog-Signature=0bad33ce98e87f28538afd4e5d06ac679098fa3a0a3036993da3ff012cf2108a1011b8e1b37c587cfa666dd40270646affcddf4fd95261dfcfc210d9965d7b263675deeb351f1e85b8fd7bc35373cd4773de84e7de530ec759afd94d59439043b129931c5b77586c408d2c7a21b456a1a5ac3f364d1e07c8ac06e00f480ba6277fe56b537ec82ee074d2fefd74b3c361a766e33c2a1cf8fda9f3395fc9b21ae04d255438985429a82f98948a57e2cb82619c00309541797b9fda2e28eff73f5612b57faf2f430d515738d82f04418178e2ff2a31fbb731bab59fe286cf2781feb472ef742be91e42bd2527ec9b74fb293e6d117944cfd8aea393e1a1dbdc4327"
+                            alt="Performance" class="feature-icon">
+                        <p class="feature-text">Performa Mengemudi Gagah</p>
+                    </div>
+                    <!-- Feature 4 -->
+                    <div class="feature-item">
+                        <img src="https://storage.googleapis.com/gcmkscsp001/public/products/main-features/QIpnC9YpvIOMQnn7yF1fCQXtKYBfaXIV9NGRx7nq.png?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=bsidevops%40gp-prod-mmksi-web-01.iam.gserviceaccount.com%2F20260201%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260201T102531Z&X-Goog-Expires=604800&X-Goog-SignedHeaders=host&ts=1769941531&X-Goog-Signature=49ed665107a1d0e67541b25df6038278461fde6bd82d68455b277ad9be5fabcf89c8b15496e46e5ff526443d66d60764f02ae7fe455863fb622bfa85a01054cc5c8d9f8d2b436d168e7b68de5cebfda3cfa5ad2fb7936eb293adb308dd90d3b461a3859664c1cd772a74446bf0d85ac1b08d9e30bd0153d958e1c8ef962332321b8572e10675466bb174ab74cf9ecaf73090474e2b8671a7cae37bee90f27520c9e890f229a2aef1a43d45654a351e7bb4f7a6ed08749b883644f32b992dc311a864304b7448d03347a0b36be4087149f8556fe19adc9fcabfd6a5cbcc26f7b3294cbfd603b033f229d1b6b2a8ace1782277bd19c00c4a37c068eae25fd9942c"
+                            alt="Feature" class="feature-icon">
+                        <p class="feature-text">Fitur Mewah Kendaraan</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Features Section -->
-    <section id="features" class="features">
-        <div class="container">
-            <span class="section-subtitle">Kenapa Pajero Sport?</span>
-            <h2 class="section-title">Dominasi Jalanan</h2>
-
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3>Performa Tangguh</h3>
-                    <p>Mesin Diesel 4N15 2.4L MIVEC Turbocharged dan Intercooled yang bertenaga namun ramah lingkungan.
-                    </p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🛡️</div>
-                    <h3>Keselamatan Superior</h3>
-                    <p>Dilengkapi 7 SRS Airbags, FCM (Forward Collision Mitigation), dan BSW (Blind Spot Warning) untuk
-                        keamanan maksimal.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">✨</div>
-                    <h3>Desain Dynamic Shield</h3>
-                    <p>Tampilan depan yang gagah dan futuristik, mencerminkan identitas tangguh Mitsubishi Motors.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Detail Section (Interior/Exterior) -->
-    <section id="interior" class="detail-section">
-        <div class="container">
-            <!-- Row 1 -->
-            <div class="detail-row">
-                <div class="detail-content">
-                    <span class="section-subtitle">Interior Mewah</span>
-                    <h2 class="section-title">Kenyamanan Kelas Atas</h2>
-                    <p>Nikmati kabin yang luas dengan material premium. Dilengkapi dengan 8-inch Color LCD Meter dan
-                        Power Tailgate dengan Kick Sensors untuk kemudahan Anda.</p>
-                    <br>
-                    <a href="#" class="btn btn-outline" style="border-color: #333; color: #333;">Lihat Detail</a>
-                </div>
-                <div class="detail-image">
-                    <!-- Placeholder using external service since local images might be missing or broken -->
-                    <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&q=80&w=800"
-                        alt="Pajero Sport Interior">
-                </div>
-            </div>
-
-            <!-- Row 2 -->
-            <div class="detail-row reverse">
-                <div class="detail-content">
-                    <span class="section-subtitle">Eksterior Gagah</span>
-                    <h2 class="section-title">Tampil Beda</h2>
-                    <p>Velg alloy 18 inci dual-tone baru dan lekukan bodi yang aerodinamis membuat Anda menjadi pusat
-                        perhatian di mana saja.</p>
-                </div>
-                <div class="detail-image">
-                    <img src="https://images.unsplash.com/photo-1627889397943-25a805b530c0?auto=format&fit=crop&q=80&w=800"
-                        alt="Pajero Sport Exterior">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA / Footer -->
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <h2 class="footer-logo">MITSUBISHI MOTORS</h2>
-                    <p>Drive your Ambition.</p>
-                </div>
-                <div class="footer-links">
-                    <ul>
-                        <li><a href="#">Tentang Kami</a></li>
-                        <li><a href="#">Dealer Terdekat</a></li>
-                        <li><a href="#">Hubungi Kami</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="copyright">
-                &copy; 2026 Mitsubishi Motors. All rights reserved. Redesign Project.
-            </div>
-        </div>
-    </footer>
-
+    </main>
 </body>
 
 </html>
