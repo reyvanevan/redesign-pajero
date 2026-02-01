@@ -34,8 +34,26 @@
             </div>
         </nav>
 
-        <!-- Mobile Menu Trigger (Visual Only for now) -->
-        <div class="hidden-desktop" style="color: white; font-size: 24px;">&#9776;</div>
+        <!-- Mobile Menu Trigger -->
+        <button class="menu-toggle hidden-desktop" aria-label="Toggle Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Mobile Nav Menu -->
+        <div class="mobile-nav-panel">
+            <div class="mobile-nav-items">
+                <a href="#" class="mobile-nav-item">Model</a>
+                <a href="#" class="mobile-nav-item">Purna Jual</a>
+                <a href="#" class="mobile-nav-item">Kepemilikan</a>
+                <a href="#" class="mobile-nav-item">Promosi</a>
+                <a href="#" class="mobile-nav-item">Berita & Aktivitas</a>
+                <div class="mobile-search">
+                    <input type="text" placeholder="Cari...">
+                </div>
+            </div>
+        </div>
     </header>
 
     <main>
@@ -464,6 +482,19 @@
 
             function prevDetail() {
                 updateDetailSlide(currentDetailIndex - 1);
+            }
+
+            // Phase 6: Mobile Menu Toggle
+            const menuToggle = document.querySelector('.menu-toggle');
+            const mobileNav = document.querySelector('.mobile-nav-panel');
+
+            if (menuToggle && mobileNav) {
+                menuToggle.addEventListener('click', () => {
+                    menuToggle.classList.toggle('active');
+                    mobileNav.classList.toggle('active');
+                    // Prevent scroll when menu is open
+                    document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+                });
             }
         </script>
 </body>

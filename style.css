@@ -932,3 +932,109 @@ ul {
     color: #666;
     font-size: 12px;
 }
+
+/* Phase 6: Mobile Navigation Styles */
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 2000;
+}
+
+.menu-toggle span {
+    width: 100%;
+    height: 2px;
+    background-color: var(--mmc-white);
+    transition: all 0.3s ease;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+.mobile-nav-panel {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--mmc-black);
+    z-index: 1500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.mobile-nav-panel.active {
+    right: 0;
+}
+
+.mobile-nav-items {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+}
+
+.mobile-nav-item {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--mmc-white);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.mobile-search input {
+    background: transparent;
+    border: 1px solid #555;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 25px;
+    text-align: center;
+}
+
+/* Phase 6: Smooth Entrance Animations */
+.hero-title {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s forwards 0.5s;
+}
+
+.hero-badge-img {
+    opacity: 0;
+    transform: scale(0.9);
+    animation: fadeInScale 1s forwards;
+}
+
+@keyframes fadeInUp {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInScale {
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Better Hover Effects */
+.color-btn:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s;
+}
+
+.btn-outline-black:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
