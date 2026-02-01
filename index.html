@@ -174,12 +174,29 @@
 
         <!-- Script for Color Switching -->
         <script>
+            const carImages = {
+                'white': 'https://storage.googleapis.com/gcmkscsp001/public/media-assets/e6c5ea0b-9e4d-4cc0-b511-76b00f301b5b/conversions/blzjdbe7xpmljrfu6g4cqzk4xpiidzqmwbv9l7co-optimized.webp?GoogleAccessId=bsidevops%40gp-prod-mmksi-web-01.iam.gserviceaccount.com&Expires=1770546329&Signature=oIyqFrPgTkqoqsOVi2FPEtR%2BC8dSjt7W%2BkdoYGt3k0epI00fSEWZ0Izky2SX6dQKTieaikg56A6xEkI9u3j1uBfO8u6QpGon3wez0CZaA%2F4NBcz1qccA3HHNKIyE4DSYwfEAZAcb%2FAbRgJAJJc%2FqkUTHHEkBExpkeQvHK33FZZ%2BVQQH1VUhOQMu2m%2BnOhc4RSFXpfYFMsVO0D05KH6rFFjDBYZJjn5GWqYQ%2B8z8VmhP2y0NIrzETioWZKIbfo8fwLdVOZpdVcyQXf1DbHIGJd1QVh0Sm5o%2BeQXC8c6mhTXgOmtfqLii18GKW6FXSKGX9YAXfbcxuSo03HpI8zoNpdA%3D%3D',
+                'silver': 'https://storage.googleapis.com/gcmkscsp001/public/media-assets/9190c1c8-cfd0-4ea0-9d70-cd01eb29b395/conversions/zl2ttcugyhcvnoghemhllfb4unzuv4gevvxwsmdy-optimized.webp?GoogleAccessId=bsidevops%40gp-prod-mmksi-web-01.iam.gserviceaccount.com&Expires=1770546329&Signature=J7R8fveerublwUe5aNu4RcVstnByLrkKUqQPB1A1dmbPNkZnHfIaGUEl2fV0mnFwuguddUYguKsR%2Ft6uBnleyopxTMM8IFjh5MQsBDQ9G2QpEyvtvyZhVRlvydvPvG3nBzrFd3rXGhCRHxrt6QjV4dWjsTwqvkeKpAbxRBx3u2cUv3dJko6ddueHrRUio0kcSfvPHQABFMLcgP9E8HnGm%2BXP9%2BFO03L4glcLH4wIXFR%2Bsu54i26fNS8kfG5DbnhZJy1HhfNFD%2FonG8ANc6%2BM0nIGQ5u2UWZQ1r5TD25YXFZ7uC3CVbdr2IDWiHiBNj%2Fy8MmjvsJZ3S9D6TrgCHLBsw%3D%3D',
+                'gray': 'https://storage.googleapis.com/gcmkscsp001/public/media-assets/42ab7476-a4bb-4749-b6ce-4b60acacee72/conversions/lprwvuhgzlmnecvg3oni4ad3evy02kg5rwxsiah7-optimized.webp?GoogleAccessId=bsidevops%40gp-prod-mmksi-web-01.iam.gserviceaccount.com&Expires=1770546329&Signature=duNlHK%2FfWSX%2FFINLj90yYpxsC%2FjfnbisRRMQXEXgYFGdX9BOg9cdzLNxeEpwOuj7nskRIxeWYDnxwUgQTceeVVo%2BpWjNnIbze2EwATHmqf40GAO43tkkDFGcz14Mf1fFVW5MFx9rsUDGUPanhUGgW%2BA18ZrQLkzrxUR8cIpeJwuElwW1m8HDVGuqqRFP%2B3FQfS44YaM8ihQWQ4OP2mHBZh83SPD8QmoPWthfxUxFzLmSrHpZ%2F4FBC7oH76QpSWVX%2F2TcA076FxcYlGN6KIzbmAV8PQGkPkjODVccQPJipa79bcv9X8JmE%2BFoq%2FmmMAUIHsJ%2FOuPOTg%2BN4JlBxwf38Q%3D%3D',
+                'black': 'https://storage.googleapis.com/gcmkscsp001/public/media-assets/7c9922a0-9af7-4568-896c-8cbe1ca85eb3/conversions/dmysp2zfw5g7rluj0kjnxxildwfsy22kw9470jjj-optimized.webp?GoogleAccessId=bsidevops%40gp-prod-mmksi-web-01.iam.gserviceaccount.com&Expires=1770546329&Signature=LM7bML26nCfQJou1LUGaehfgSFZBeNjOR9MkjjTWt5Es2pK1i%2FXhBi0nX5MuqF6EvSP%2FXLL82d4XQ9ffn9PevnRL4AVjCpoXuPKywvVLvpvv7wi9ZVXUaKv5qYdhpnU8675odHhgXX60pl3mY1PHL6dMtdyohCVaJLD7dHuAyHjkMiXszjvT%2BRYbHRA%2BmwT7Fq%2BaEQ%2BEuzQjArjsC43oMFlNrnl5cAmodfAJdMPGjRONR7419l%2FW%2FFw%2Bhw6Nd8LySljlazkqgPkSO3qCdYmntmtAIajaVrVpGfOJNdUguUpcho58I0FGy86LtbOBD6cFD2ezT1W3%2Fa6u9wPimUOZLw%3D%3D'
+            };
+
             function changeColor(color) {
                 const img = document.getElementById('variantCarImage');
-                // Placeholder logic for changing images - ideally map these to real URLs
-                // Since I don't have all URL permutations, I will just log it for now
-                // In a real implementation we would have a dictionary of color -> URL
-                console.log('Changed color to:', color);
+
+                // Opacity transition
+                img.style.opacity = '0';
+
+                setTimeout(() => {
+                    if (carImages[color]) {
+                        img.src = carImages[color];
+                    }
+                    img.onload = () => {
+                        img.style.opacity = '1';
+                    };
+                    // Fallback
+                    setTimeout(() => img.style.opacity = '1', 50);
+                }, 300);
 
                 // Visual feedback for buttons
                 document.querySelectorAll('.color-btn').forEach(btn => btn.classList.remove('active'));
