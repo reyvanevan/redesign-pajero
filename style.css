@@ -284,3 +284,216 @@ ul {
     font-size: 12px;
   }
 }
+
+/* --- Phase 2: Sticky Product Header --- */
+.sticky-nav {
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  background-color: var(--mmc-white);
+  border-bottom: 1px solid var(--mmc-gray-medium);
+  transition: top 0.3s;
+}
+
+.sticky-nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 0 20px;
+}
+
+.sticky-logo {
+  height: 40px;
+}
+
+.sticky-links {
+  display: flex;
+  gap: 30px;
+}
+
+.sticky-link {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--mmc-gray-dark);
+  text-transform: uppercase;
+  position: relative;
+  cursor: pointer;
+}
+
+.sticky-link:hover,
+.sticky-link.active {
+  color: var(--mmc-black);
+  font-weight: 700;
+}
+
+.sticky-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  /* Adjust to align with border */
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--mmc-red);
+}
+
+.compare-btn {
+  background-color: var(--mmc-black);
+  color: white;
+  padding: 10px 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.compare-btn:hover {
+  background-color: var(--mmc-red);
+}
+
+/* --- Phase 2: Variant Section --- */
+.variant-section {
+  padding: 60px 0;
+  background-color: var(--mmc-white);
+  min-height: 600px;
+}
+
+.variant-container {
+  display: grid;
+  grid-template-columns: 200px 1fr 250px;
+  gap: 40px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.variant-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.color-title {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.color-options {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.color-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  padding: 2px;
+  /* For border spacing */
+}
+
+.color-btn img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.color-btn.active {
+  border-color: var(--mmc-black);
+}
+
+.price-container {
+  margin-top: 40px;
+}
+
+.price-tag {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--mmc-black);
+}
+
+.price-note {
+  font-size: 12px;
+  color: #666;
+}
+
+.variant-image-area {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.car-image {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  transition: opacity 0.3s ease;
+}
+
+/* Variant List (Right Side) */
+.variant-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-left: 1px solid #eee;
+}
+
+.variant-item {
+  padding: 15px 20px;
+  cursor: pointer;
+  border-left: 4px solid transparent;
+  transition: all 0.2s;
+  color: #999;
+}
+
+.variant-item:hover {
+  background-color: #f9f9f9;
+}
+
+.variant-item.active {
+  border-left-color: var(--mmc-red);
+  color: var(--mmc-black);
+  font-weight: 700;
+}
+
+.variant-name {
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+/* Mobile Adjustments for Phase 2 */
+@media (max-width: 1024px) {
+  .sticky-links {
+    display: none;
+  }
+
+  .variant-container {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+    gap: 20px;
+  }
+
+  .variant-image-area {
+    order: -1;
+    /* Image on top */
+  }
+
+  .variant-sidebar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .variant-list {
+    display: none;
+    /* Hide variant list on mobile for now, simplify */
+  }
+}
